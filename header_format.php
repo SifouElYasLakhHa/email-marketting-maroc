@@ -11,38 +11,41 @@ switch ($header_nbr){
            }elseif($body_type==2){
                 $header.='Content-Type: multipart/alternative; boundary="----=NextPart-__Uniqid"'.chr(10);
            }
-		              $header.="Subject: [Subject]".chr(10);
-           $header.="From: [FromName] <[FromEmail]>".chr(10);
-           $header.="Reply-to: <[ReplyEmail]>".chr(10);
-           $header.="To: [To]".chr(10);
-           $header.="Content-Type: text/html".chr(10);
-           $header.="Date: [SMTPDate]".chr(10);
-         //  $header.="Subject: [Subject]".chr(10);
-         //  $header.="From: __From".chr(10);
-         //  $header.="Reply-To: __Reply-To".chr(10);
-        //   $header.="To: __To".chr(10);
-        //   $header.="Subject: __Subject".chr(10);
-       //    $header.="X-Mail-From: __Bounce".chr(10);
-        //   $header.="X-RCPT-To: __To".chr(10);
-       //    $header.="X-Mailer: __X-Mailer".chr(10);
-      //     $header.="Date: __smtpDate".chr(10);
+		$header.="Subject: [Subject]".chr(10);
+              $header.="From: [FromName] <[FromEmail]>".chr(10);
+              $header.="Reply-to: <[ReplyEmail]>".chr(10);
+              $header.="To: [To]".chr(10);
+              $header.="Content-Type: text/html".chr(10);
+              $header.="Date: [SMTPDate]".chr(10);
+              $header.="X-Mail-From: __Bounce".chr(10);
+              $header.="From: __From".chr(10);
+              //  $header.="Subject: [Subject]".chr(10);
+              //  $header.="From: __From".chr(10);
+              //  $header.="Reply-To: __Reply-To".chr(10);
+              //   $header.="To: __To".chr(10);
+              //   $header.="Subject: __Subject".chr(10);
+              //    $header.="X-Mail-From: __Bounce".chr(10);
+              //   $header.="X-RCPT-To: __To".chr(10);
+              //    $header.="X-Mailer: __X-Mailer".chr(10);
+              //     $header.="Date: __smtpDate".chr(10);
 		   
 		   
-		   if($body_type==2){
+		if($body_type==2){
 		   	$header.=chr(10);
-            $header.="This is a multi-part message in MIME format.".chr(10);
-           	$header.="------=NextPart-__Uniqid".chr(10);
-           	$header.='Content-Type: text/plain; charset="iso-8859-1"'.chr(10);
-           	$header.="Content-Transfer-Encoding: quoted-printable".chr(10);
-           	$header.=chr(10);
-           	$header.="__textMessage";
-           	$header.=chr(10)."------=NextPart-__Uniqid".chr(10);
-           	$header.='Content-Type: text/html; charset="iso-8859-1"'.chr(10);
-           	$header.="Content-Transfer-Encoding: quoted-printable".chr(10);
-           	$header.=chr(10);
-           	$header.="__htmlMessage";
-           	$header.=chr(10)."------=NextPart-__Uniqid--".chr(10);	
-           }
+                     $header.="This is a multi-part message in MIME format.".chr(10);
+                     $header.="------=NextPart-__Uniqid".chr(10);
+                     $header.='Content-Type: text/plain; charset="iso-8859-1"'.chr(10);
+                     $header.="Content-Transfer-Encoding: quoted-printable".chr(10);
+                     $header.=chr(10);
+                     $header.="__textMessage";
+                     $header.=chr(10)."------=NextPart-__Uniqid".chr(10);
+                     $header.='Content-Type: text/html; charset="iso-8859-1"'.chr(10);
+                     $header.="Content-Transfer-Encoding: quoted-printable".chr(10);
+                     $header.=chr(10);
+                     $header.="__htmlMessage";
+                     $header.=chr(10)."------=NextPart-__Uniqid--".chr(10);	
+                     //$header.=chr(10)."abuse@__Bounce_dn".chr(10); 
+              }
            break;
     case 2:
            $header.="From: __From".chr(10);
