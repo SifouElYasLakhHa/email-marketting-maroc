@@ -460,6 +460,7 @@ function upload_negative()
             }
             $message_tmp = $message;
             $message = str_replace("[Domain]",$domain_body,$message);
+			
 			// $from_name_x=addslashes($from_name);
             // $subject_x=addslashes($subject);
             // $header_format_x=addslashes($header_format);
@@ -556,27 +557,27 @@ function upload_negative()
 		$link1 = str_replace(array("[Domain]","[OfferPage]"),array($domain,"app/wrap/".base64_encode($redirect_page_ol)),$link1);
 		$link2 = str_replace(array("[Domain]","[OfferUnsub]"),array($domain,"app/wrap/".base64_encode($redirect_page_ou)),$link2);
 		// $link3 = str_replace(array("[Domain]","[ServerUnsub]"),array($domain,"app/wrap/".base64_encode($redirect_page_su)),$link3);
-				$link3 = str_replace(array("[Domain]","[ServerUnsub]"),array($domain,"app/unsub/optdown.php/".base64_encode($redirect_page_ou)),$link3);
+		$link3 = str_replace(array("[Domain]","[ServerUnsub]"),array($domain,"app/unsub/optdown.php/".base64_encode($redirect_page_ou)),$link3);
 
 		echo $link1.'|'.$link2.'|'.$link3;
    }
  
-   
-      // function comment(){
-      // $data=array();
-      // $query = bd::query("SELECT message from comment where id_mailer='{$_SESSION['id-mailer']}' and status='Delivered' ORDER BY id DESC");
-      // while ($row = mysql_fetch_object($query)) {
-          // $data[]=$row;
-      // }
-      // echo json_encode($data);
-   // }
-   
+	
+		// function comment(){
+		// $data=array();
+		// $query = bd::query("SELECT message from comment where id_mailer='{$_SESSION['id-mailer']}' and status='Delivered' ORDER BY id DESC");
+		// while ($row = mysql_fetch_object($query)) {
+			// $data[]=$row;
+		// }
+		// echo json_encode($data);
+		// }
+		
 
-         // function delete_comment(){
-			    // $date_red=date('Y-m-d h:i:s');
-       // $query = bd::query("UPDATE comment SET status='Red',date_red='$date_red' WHERE id_mailer='{$_SESSION['id-mailer']}' ");
+				// function delete_comment(){
+						// $date_red=date('Y-m-d h:i:s');
+			// $query = bd::query("UPDATE comment SET status='Red',date_red='$date_red' WHERE id_mailer='{$_SESSION['id-mailer']}' ");
 
-   // }
+		// }
    
    
    function get_servers(){

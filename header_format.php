@@ -11,27 +11,27 @@ switch ($header_nbr){
            }elseif($body_type==2){
                 $header.='Content-Type: multipart/alternative; boundary="----=NextPart-__Uniqid"'.chr(10);
            }
-		$header.="Subject: [Subject]".chr(10);
+              $header.="Subject: [Subject]".chr(10);
               $header.="From: [FromName] <[FromEmail]>".chr(10);
               $header.="Reply-to: <[ReplyEmail]>".chr(10);
               $header.="To: [To]".chr(10);
               $header.="Content-Type: text/html".chr(10);
               $header.="Date: [SMTPDate]".chr(10);
-              $header.="X-Mail-From: __bounce_dn".chr(10);
-              $header.="From: __From_dn".chr(10);
+              $header.="X-Mail-From: [__bounce]".chr(10);
+              $header.="From: [__From]".chr(10);
               //  $header.="Subject: [Subject]".chr(10);
-              //  $header.="From: __From_dn".chr(10);
+              //  $header.="From: __From".chr(10);
               //  $header.="Reply-To: __Reply-To".chr(10);
-              //   $header.="To: __To".chr(10);
-              //   $header.="Subject: __Subject".chr(10);
-              //    $header.="X-Mail-From: __bounce_dn".chr(10);
-              //   $header.="X-RCPT-To: __To".chr(10);
-              //    $header.="X-Mailer: __X-Mailer".chr(10);
-              //     $header.="Date: __smtpDate".chr(10);
+              //  $header.="To: __To".chr(10);
+              //  $header.="Subject: __Subject".chr(10);
+              //  $header.="X-Mail-From: __Bounce".chr(10);
+              //  $header.="X-RCPT-To: __To".chr(10);
+              //  $header.="X-Mailer: __X-Mailer".chr(10);
+              //  $header.="Date: __smtpDate".chr(10);
 		   
 		   
-		if($body_type==2){
-		   	$header.=chr(10);
+              if($body_type==2){
+                     $header.=chr(10);
                      $header.="This is a multi-part message in MIME format.".chr(10);
                      $header.="------=NextPart-__Uniqid".chr(10);
                      $header.='Content-Type: text/plain; charset="iso-8859-1"'.chr(10);
@@ -44,11 +44,10 @@ switch ($header_nbr){
                      $header.=chr(10);
                      $header.="__htmlMessage";
                      $header.=chr(10)."------=NextPart-__Uniqid--".chr(10);	
-                     //$header.=chr(10)."abuse@__Bounce_dn".chr(10); 
               }
            break;
-    case 2:
-           $header.="From: __From_dn".chr(10);
+       case 2:
+           $header.="From: __From".chr(10);
            $header.="To: __To".chr(10);
            $header.="Subject: __Subject".chr(10);
            $header.="MIME-Version: 1.0".chr(10);
@@ -60,7 +59,7 @@ switch ($header_nbr){
 		   }
            $header.="List-Unsubscribe: <mailto:leave-__Chr(__Rand(97,122))__Chr(__Rand(98,122))@__Bounce_dn>".chr(10);
            $header.="Message-Id: <LYRIS-__Chr(__Rand(97,122)).__Chr(__Rand(98,122))-__Date@__Bounce_dn>".chr(10);
-           $header.="Return-Path: __bounce_dn".chr(10);
+           $header.="Return-Path: __Bounce".chr(10);
            $header.="Date: __smtpDate".chr(10);
 		   if($body_type==2){
 		   	$header.=chr(10);
@@ -80,10 +79,10 @@ switch ($header_nbr){
            break;
     case 3:
            $header.="Reply-To: __Reply-To".chr(10);
-           $header.="Bounces_to: __bounce_dn".chr(10);
+           $header.="Bounces_to: __Bounce".chr(10);
            $header.="Message-ID: <__Chr(__Rand(97,122))__Chr(__Rand(98,122)).__X-Mailer@__From_dn>".chr(10);
            $header.="X-BFI: __Chr(__Rand(97,122))__Chr(__Rand(98,122))".chr(10);
-           $header.="From: __From_dn".chr(10);
+           $header.="From: __From".chr(10);
            $header.="Subject: __Subject".chr(10);
            $header.="To: __To".chr(10);
            $header.="MIME-Version: 1.0".chr(10);
@@ -92,7 +91,7 @@ switch ($header_nbr){
            }elseif($body_type==2){
 		   	$header.='Content-Type: multipart/alternative; boundary="----=NextPart-__Uniqid"'.chr(10);
 		   }
-           $header.="Return-Path: __bounce_dn".chr(10);
+           $header.="Return-Path: __Bounce".chr(10);
            $header.="Date: __smtpDate".chr(10);
 		   if($body_type==2){
 		   	$header.=chr(10);
@@ -119,7 +118,7 @@ switch ($header_nbr){
 		   	$header.='Content-Type: multipart/alternative; boundary="----=NextPart-__Uniqid"'.chr(10);
 		   }
            $header.="To: __To".chr(10);
-           $header.="From: __From_dn".chr(10);
+           $header.="From: __From".chr(10);
            $header.="Sender: __From_nm@__From_dn".chr(10);
            $header.="X-Loop: __From_nm@__From_dn".chr(10);
            $header.="X-Mailer: __X-Mailer".chr(10);
@@ -146,7 +145,7 @@ switch ($header_nbr){
            break;
    case 5:
    	       $header.="Subject: __Subject".chr(10);
-           $header.="From: __From_dn".chr(10);       
+           $header.="From: __From".chr(10);       
            $header.="Reply-To: <__Reply-To>".chr(10);
            $header.="To: __To".chr(10);     
            $header.="xprior: Low".chr(10);  
@@ -177,7 +176,7 @@ switch ($header_nbr){
            break;
    case 6:
     	   $header.="Message-ID: <29986454.1180728024697.__X-Mailer@__From_dn>".chr(10);
-           $header.="From: __From_dn".chr(10);
+           $header.="From: __From".chr(10);
            $header.="Reply-To: __Reply-To".chr(10);
            $header.="To: __To".chr(10);
            $header.="Subject: __Subject".chr(10);
@@ -188,7 +187,7 @@ switch ($header_nbr){
 		   	$header.='Content-Type: multipart/alternative; boundary="----=NextPart-__Uniqid"'.chr(10);
 		   }
            $header.="x-mid: __Rand(100000,999999)".chr(10);
-           $header.="Return-Path: __bounce_dn".chr(10);
+           $header.="Return-Path: __Bounce".chr(10);
            $header.="Date: __smtpDate".chr(10);
 		   if($body_type==2){
 		   	$header.=chr(10);
@@ -209,7 +208,7 @@ switch ($header_nbr){
    case 7 :
    		   $header.="Date: __smtpDate".chr(10);
            $header.="Subject: __Subject".chr(10);
-           $header.="From: __From_dn".chr(10);
+           $header.="From: __From".chr(10);
            $header.="Reply-to: __Reply-To".chr(10);
            $header.="To: __To".chr(10);
            $header.="X-Mailer: __X-Mailer".chr(10);
@@ -239,7 +238,7 @@ switch ($header_nbr){
         case 8 :
                         $header.="X-Mailer: PHPMailer [version 1.73]".chr(10);
                         $header.="X-Mailer: phplist v2.11.3".chr(10);
-                        $header.="From: __From_dn".chr(10);
+                        $header.="From: __From".chr(10);
                         $header.="Precedence: bulk".chr(10);
                         $header.="MIME-Version: 1.0".chr(10);
                         $header.="List-Unsubscribe: <mailto:listunsub@__Bounce_dn>".chr(10);
@@ -256,7 +255,7 @@ switch ($header_nbr){
 
   default :
            $header.="Subject: __Subject".chr(10);
-           $header.="From: __From_dn".chr(10);
+           $header.="From: __From".chr(10);
            $header.="Reply-to: <__Reply-To>".chr(10);
            $header.="To: __To".chr(10);
            $header.="X-Originating-IP: __Ip".chr(10);  

@@ -1257,7 +1257,7 @@ Date: [SMTPDate]</textarea>
         </div>
         <div class="modal-body">
             <p><strong>Subject:</strong> [Subject]</p>
-            <p><strong>From:</strong> [FromName] <[FromEmail]> or [From]</p>
+            <p><strong>From:</strong> [FromName] <[FromEmail]> or [__From]</p>
 			<p><strong>PlaceHolder:</strong> [PlaceHolder] </p>
             <p><strong>To:</strong> [To]</p>
             <p><strong>Reply-To:</strong> <[ReplyEmail]></p>
@@ -1265,7 +1265,7 @@ Date: [SMTPDate]</textarea>
 			<p><strong>Date:</strong> [DateHung] ==> Y.M.D</p>
             <p><strong>MIME-Version:</strong> 1.0</p>
             <p><strong>X-Originating-IP:</strong> [Ip]</p>
-            <p><strong>Message-ID:</strong> [UniqueID].[CampaignID].[ListID].[UserID].[Random(AN,20)]@[Domain]</p>
+            <p><strong>Message-ID:</strong> [UniqueID].[CampaignID].[ListID].[UserID].[Random(AN,20)]@[Domain] or [__bounce]</p>
             <p><strong>Content-Type:</strong> text/html</p>
             <p><strong>Content-Type:</strong> text/plain;</p>
             <p><strong>Content-Type:</strong> text/html; charset="iso-8859-1"</p>
